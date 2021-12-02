@@ -1,13 +1,7 @@
 import java.io.File
 
 fun main(args: Array<String>) {
-    println("Hello World!")
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
-
-    var content = File("C:\\Users\\Benedikt Hahn\\Desktop\\Ordnerstruktur\\Code\\Git\\Github\\AdventOfCode\\2015\\src\\main\\resources\\day1.txt").readLines()[0]
+    val content = File("C:\\Users\\Benedikt Hahn\\Desktop\\Ordnerstruktur\\Code\\Git\\Github\\AdventOfCode\\2015\\src\\main\\resources\\day1.txt").readLines()[0]
     var x = 0
     var n = 0
     content.forEach { c -> n++
@@ -16,9 +10,10 @@ fun main(args: Array<String>) {
                             } else {
                                 x--
                             }
-                            if (x == -1) {
-                                println(n)
+                            if (x == -1 && n >= x) {
+                                println("Part 1: $n")
+                                n = Int.MIN_VALUE
                             }
                         }
-    println(x)
+    println("Part 2: $x")
 }
