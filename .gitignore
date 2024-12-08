@@ -4,3 +4,4 @@
 *.o
 *.hi
 *in.txt
+*target/
